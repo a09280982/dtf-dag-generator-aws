@@ -1,0 +1,20 @@
+{
+  "FunctionName": "dtf-dag-generator-aws",
+  "PackageType": "Image",
+  "Code": {
+    "ImageUri": "$(account).dkr.ecr.ap-southeast-1.amazonaws.com/image/dtf-dag-generator-aws:$(buildnumber)"
+  },
+  "Role": "arn:aws:iam::$(account):role/cubaws-MwaaLambdaEventtriggerRole",
+  "Description": "Gen DAG Lambda Contanier via CICD",
+  "Timeout": 400,
+  "MemorySize": 128,
+  "Environment": {
+    "Variables": {
+      "CONF_PATH": "conf",
+      "TEMPLATE_PATH": "airflow_template",
+      "OUTPUT_PATH": "s3://$(env)-s3-mwaa-sg-$(account)/ds/dags/etl_dags/",
+      "ENV": "$(env)",
+      "ACCOUNT": "$(account)"
+    }
+  }
+}

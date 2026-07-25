@@ -1,0 +1,8 @@
+[
+    {
+        "function-name":"dtf-dag-generator-aws",
+        "action":"lambda:InvokeFunction",
+        "principal":"events.amazonaws.com",
+        "source-arn":"arn:aws:events:ap-southeast-1:$(account):rule/gen_dag_trigger"
+    }
+]

@@ -1,0 +1,10 @@
+default_args:
+    owner: datateam
+
+start_date: 2025-06-10
+region: ap-southeast-1
+
+template:
+    ods: ods_template.py
+    tfd: tfd_template.py
+    omni: omni_template.py
